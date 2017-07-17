@@ -1,6 +1,8 @@
-const Discord = require("discord.js");
+import Discord from 'discord.js';
+import Config from './config';
+
 const client = new Discord.Client();
-const bot_token = 'store me in a separate file plz';
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
@@ -10,5 +12,5 @@ client.on('message', msg => {
     msg.reply('Pong!');
   }
 });
-
-client.login(token);
+// console.log(Config.bot_login_token);
+client.login(Config.bot_login_token);
